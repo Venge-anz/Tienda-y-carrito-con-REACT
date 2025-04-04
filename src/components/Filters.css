@@ -4,9 +4,27 @@
   justify-content: space-between;
   font-size: 14px;
   font-weight: 700;
+  margin: 30px;
 }
 
 .filters > div {
   display: flex;
   gap: 1rem;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  background-color: #e5aaaa;
+  height: 6px;
+  border-radius: 4px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  background-color: #c97f1d;
+  border: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  margin-top: -5px;
+  cursor: pointer;
+  appearance: none;
 }

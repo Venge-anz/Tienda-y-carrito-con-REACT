@@ -1,14 +1,15 @@
 import { products as initialProducts } from "./mocks/products.json";
+import { Footer } from "./components/Footer.jsx";
 import { Products } from "./components/Products.jsx";
 import { Header } from "./components/Header.jsx";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { IS_DEVELOPMENT } from "./mocks/confi.js";
+import { FiltersContext } from "./context/filters.jsx";
 
-function App() {
-  const [products] = useState(initialProducts);
-  const [filters, setFilters] = useState({
-    category: "all",
-    minPrice: 0,
-  });
+function useFilters() {
+  const { filters, setFilters } = useContext(FiltersContext);
+
+  // FILTRADO DE PRODUCTOS !!!!!
 
   const filterProducts = (products) => {
     return products.filter((product) => {
@@ -19,12 +20,19 @@ function App() {
     });
   };
 
+  return { filters, filterProducts, setFilters };
+}
+
+function App() {
+  const [products] = useState(initialProducts);
+  const { filters, filterProducts, setFilters } = useFilters();
   const filteredProducts = filterProducts(products);
 
   return (
     <>
-      <Header updateFilters={setFilters} />
+      <Header changeFilters={setFilters} />
       <Products products={filteredProducts} />
+      {IS_DEVELOPMENT && <Footer filters={filters}></Footer>}
     </>
   );
 }
