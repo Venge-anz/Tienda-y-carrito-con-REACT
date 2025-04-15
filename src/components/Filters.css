@@ -5,6 +5,10 @@
   font-size: 14px;
   font-weight: 700;
   margin: 30px;
+  height: 80px;
+  position: sticky;
+  top: 0;
+  background-color: #ca5b5b;
 }
 
 .filters > div {
