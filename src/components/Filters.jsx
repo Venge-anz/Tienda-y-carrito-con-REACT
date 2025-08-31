@@ -45,7 +45,11 @@ export function Filters() {
       </div>
       <div>
         <label htmlFor={CategoryFilterId}>Categoría</label>
-        <select id={CategoryFilterId} onChange={handleChangeCategory}>
+        <select
+          className="category"
+          id={CategoryFilterId}
+          onChange={handleChangeCategory}
+        >
           <option value="all">Todos</option>
           <option value="fragrances">Perfumes</option>
           <option value="furniture">Muebles</option>

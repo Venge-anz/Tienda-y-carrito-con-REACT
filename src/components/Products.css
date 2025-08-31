@@ -6,12 +6,13 @@
   align-items: center;
   background-color: #f5cc94d1;
   box-shadow: 0 0 10px 2px rgb(245, 205, 148);
+  padding: 2rem;
 }
 
 .products ul {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(200px, 1fr));
+  gap: 3rem;
 }
 
 .products li {
@@ -24,10 +25,6 @@
   background: #edb363;
   color: #fff;
   padding: 1rem;
-}
-
-.products h3 {
-  margin: 0;
 }
 
 .products span {
